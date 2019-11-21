@@ -9,6 +9,9 @@ export function init() {
 }
 
 function onLoad() {
+  if(navigator.serviceWorker) {
+    navigator.serviceWorker.register('sw.js');
+  }
   render();
 }
 
@@ -40,4 +43,6 @@ function render() {
     `
   );
   list.innerHTML = items.join("");
+  const formDelete = document.getElementById("form-delete");
+  formDelete.hidden = contacts.length ===0;
 }

@@ -4,6 +4,8 @@
     <title>My contacts</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#dddddd"/>
+    <link rel="manifest" href="manifest.json" />
     <script type="module">
       import { init } from "./index.js";
       init();
@@ -15,12 +17,12 @@
 
     <form id="form-add">
       <input type="text" name="name" id="name" placeholder="Name" />
-      <input type="text" name="email" id="email" placeholder="E-mail" />
-      <input type="text" name="phone" id="phone" placeholder="Phone" />
+      <input type="email" name="email" id="email" placeholder="E-mail" />
+      <input type="tel" name="phone" id="phone" placeholder="Phone" />
       <button type="submit">Add</button>
     </form>
 
-    <form id="form-delete">
+    <form id="form-delete" hidden>
       <ul id="list"></ul>
       <button type="submit">Delete selected contacts</button>
     </form>
